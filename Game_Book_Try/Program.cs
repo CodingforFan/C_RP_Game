@@ -65,15 +65,8 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
-<<<<<<< HEAD
-                Mistnost(mistnost, varianta);
-<<<<<<< HEAD
                 //Souboj();
-=======
->>>>>>> refs/remotes/origin/Rozhovor
-=======
                Mistnost(mistnost, varianta);
->>>>>>> refs/remotes/origin/Rozhovor
             }
         }
 
