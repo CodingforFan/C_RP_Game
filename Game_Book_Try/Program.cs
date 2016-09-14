@@ -12,6 +12,9 @@ namespace Game_Book_Try
 
         /*POSTAVA: SKYLLI*/
         static int Heal = 10; // životy (hráče)
+        static int Mana = 10; // mana (hráče)
+        static int Lvl = 1; //level (hráče)
+
         static int l_utok = 5; // utok tipu 1 pro (hráče/nepžítele)
         static int t_utok = 10; // utok tipu 2 pro (hráče/nepžítele)
 
@@ -520,8 +523,9 @@ namespace Game_Book_Try
 
         static string Stats()
         {
-            string a = "║ životy " + Jmeno + ": " + Heal;
-            string b = "║ životy nepřítele: " + zivoty_nepritele;
+
+            string a = "║ " + "[" + Jmeno + "]" + " Životy: " + Heal + " Mana: " + Mana + " Lvl. " + Lvl;
+            string b = "║ Životy nepřítele: " + zivoty_nepritele;
             int delka = 0;
             if (a.Length > b.Length) delka = a.Length;
             else if (a.Length < b.Length) delka = b.Length;
