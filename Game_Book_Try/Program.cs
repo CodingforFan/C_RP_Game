@@ -34,7 +34,7 @@ namespace Game_Book_Try
         static string k_pokracovani;
         static string k_rozhlednuti;
         static string k_rozhovoru;
-        static string k_npc;
+        static string k_npc; //npc Name
         static string k_npc_ptase;
 
         /*PAMĚŤ: POVOLOVÁNÍ/ZAKAZOVÁNÍ MOŽNOSTÍ*/
@@ -65,10 +65,14 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
+<<<<<<< HEAD
                 Mistnost(mistnost, varianta);
 <<<<<<< HEAD
                 //Souboj();
 =======
+>>>>>>> refs/remotes/origin/Rozhovor
+=======
+               Mistnost(mistnost, varianta);
 >>>>>>> refs/remotes/origin/Rozhovor
             }
         }
