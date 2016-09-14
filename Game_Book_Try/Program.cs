@@ -11,9 +11,11 @@ namespace Game_Book_Try
         static List<string> inventar = new List<string>();
 
         /*POSTAVA: SKYLLI*/
+        static string Class = ""; // clasa hráče (hráče)
         static int Heal = 10; // životy (hráče)
         static int Mana = 10; // mana (hráče)
-        static int Lvl = 1; //level (hráče)
+        static int Lvl = 1; // level (hráče)
+
 
         static int l_utok = 5; // utok tipu 1 pro (hráče/nepžítele)
         static int t_utok = 10; // utok tipu 2 pro (hráče/nepžítele)
@@ -56,6 +58,7 @@ namespace Game_Book_Try
         static void Main(string[] args)
         {
             Name();
+            selectCustom();
             Start();
             Intro();
 
@@ -330,7 +333,6 @@ namespace Game_Book_Try
             Console.WriteLine(Moznosti());
             Console.Write("Odpověď: ");
             Odpoved(Console.ReadLine());
-
         }
 
         static void Souboj()
@@ -523,7 +525,6 @@ namespace Game_Book_Try
 
         static string Stats()
         {
-
             string a = "║ " + "[" + Jmeno + "]" + " Životy: " + Heal + " Mana: " + Mana + " Lvl. " + Lvl;
             string b = "║ Životy nepřítele: " + zivoty_nepritele;
             int delka = 0;
@@ -563,7 +564,41 @@ namespace Game_Book_Try
         //{
 
         //}
+
+        static void delete(int a)
+        {
+            Console.SetCursorPosition(0, Console.CursorTop - a);
+            for (int i = 0; i < a; i++)
+            {
+                Console.WriteLine(new string(' ', Console.WindowWidth));
+            }
+            if ((Console.CursorTop - a) <= 0) { a = a - 1; }
+            Console.SetCursorPosition(0, Console.CursorTop - a - 1);
+        }
+
+        static void selectCustom()
+        {
+            back: Console.WriteLine("Vyber si své povolání ");
+            string a = "Bojovník" + Environment.NewLine + "Lučišník" + Environment.NewLine + "Čaroděj" + Environment.NewLine + "Povolání: ";
+            Console.Write(a);
+            string b = Console.ReadLine();
+
+            if (a.Contains(b)) 
+            {
+                Class = b;
+                delete(5);
+            }
+            else 
+            {
+                Console.WriteLine("Neplatné Povolání!");
+                Console.WriteLine("{Enter}");
+                Console.ReadKey();
+                delete(6);
+                goto back;
+            
+            }
+            
     
-    
+        }
     }
 }
