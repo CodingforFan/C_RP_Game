@@ -16,7 +16,6 @@ namespace Game_Book_Try
         static int Mana = 10; // mana (hráče)
         static int Lvl = 1; // level (hráče)
 
-
         static int l_utok = 5; // utok tipu 1 pro (hráče/nepžítele)
         static int t_utok = 10; // utok tipu 2 pro (hráče/nepžítele)
 
@@ -36,7 +35,6 @@ namespace Game_Book_Try
         static string k_rozhlednuti;
         static string k_rozhovoru;
         static string k_npc;
-        static string k_hhhh;
 
         /*PAMĚŤ: POVOLOVÁNÍ/ZAKAZOVÁNÍ MOŽNOSTÍ*/
         /*CIVILNÍ*/
@@ -64,8 +62,8 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
-                //Mistnost(mistnost, varianta);
-                Souboj();
+                Mistnost(mistnost, varianta);
+                //Souboj();
             }
         }
 
@@ -337,30 +335,35 @@ namespace Game_Book_Try
 
         static void Souboj()
         {
-            bool boj = true;
             Random nahoda = new Random();
-            bool moje_kolo = true;
-            string d_o = null;
-            zivoty_nepritele = 0;
             bool nepritel_exist = true;
             bool spravna_odpoved = true;
+            bool boj = true;
+            bool moje_kolo = true;
+            string d_o = null;
+            v_boji_s = "";
             int i_z = 0;
             int zivot = Heal;
+            zivoty_nepritele = 0;
+            
 
             int a = nahoda.Next(1, 4);
             if (a == 1)
             {
                 Console.WriteLine("Uprostřed hvozdu na tebe zautočil zloděj.");
+                v_boji_s = "Zloděj";
                 zivoty_nepritele = 10;
             }
             else if (a == 2)
             {
                 Console.WriteLine("Z poza stromu na tebe vyskořil Skřet a zautočil na tebe.");
+                v_boji_s = "Skřet";
                 zivoty_nepritele = 30;
             }
             else if (a == 3)
             {
-                Console.WriteLine("Na cestě se najednou oběvil přízrak.");
+                Console.WriteLine("Na cestě se najednou oběvil Přízrak.");
+                v_boji_s = "Přízrak";
                 zivoty_nepritele = 50;
             }
 
@@ -427,7 +430,7 @@ namespace Game_Book_Try
                                 }
                                 if (d_o.Contains("OP"))
                                 {
-                                    Console.WriteLine("OP");
+                                    Console.WriteLine("Nepřítele srazilo Thorovo nebezké kladivo");
                                     zivoty_nepritele -= zivoty_nepritele;
                                 }
                                 moje_kolo = false;
@@ -540,7 +543,7 @@ namespace Game_Book_Try
                     a = a + " ";
                 }
                 a = a + " ║";
-            };
+            }
 
             if ((delka) == b.Length) b = b + " ║";
             else
@@ -551,8 +554,7 @@ namespace Game_Book_Try
                     b = b + " ";
                 }
                 b = b + " ║";
-            };
-
+            }
 
             a = "╔" + (new string('═', delka) + "╗" + Environment.NewLine) + a;
             b = b + Environment.NewLine + "╚" + (new string('═', delka) + "╝");
@@ -562,7 +564,6 @@ namespace Game_Book_Try
 
         //static string item(bool pouzit_bitve = false)
         //{
-
         //}
 
         static void delete(int a)
@@ -597,8 +598,6 @@ namespace Game_Book_Try
                 goto back;
             
             }
-            
-    
         }
     }
 }
