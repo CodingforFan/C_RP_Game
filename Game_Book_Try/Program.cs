@@ -31,6 +31,7 @@ namespace Game_Book_Try
         static string k_rozhlednuti;
         static string k_rozhovoru;
         static string k_npc;
+        static string k_npc_ptase;
 
         /*PAMĚŤ: POVOLOVÁNÍ/ZAKAZOVÁNÍ MOŽNOSTÍ*/
         /*CIVILNÍ*/
@@ -38,6 +39,8 @@ namespace Game_Book_Try
         static bool rozhledni_se;
         static bool seber;
         static bool jit;
+        static bool mluvit;
+        static bool rozhovor;
 
         /*BOJOVÉ*/
         static bool utok_1 = true;
@@ -57,8 +60,7 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
-                //Mistnost(mistnost, varianta);
-                Souboj();
+                Mistnost(mistnost, varianta);
             }
         }
 
@@ -96,9 +98,13 @@ namespace Game_Book_Try
                     k_rozhlednuti = "Starojtarou mírně zarostlou stesku Doleva, Druhou směřující doprava." + Environment.NewLine + "U ůpatí cesty ležící Kámen";
                     k_prohledani = "";
                     k_najduti = "Kamen";
+                    k_npc = ",Vandrák,";
+                    k_npc_ptase = ",Dáš mi zlaťák ?,";
+                    k_rozhovoru = "Zbohem, ";
                     prohledej = false;
                     rozhledni_se = true;
                     seber = false;
+                    mluvit = false;
                     jit = true;
                     radky_v_hl_popise = 2;
                     /*Konec nastavení místnosti)*/
@@ -160,6 +166,7 @@ namespace Game_Book_Try
                 if (rozhledni_se) a = a + "Rozhlednout se, ";
                 if (seber) a = a + "Sebrat, ";
                 if (jit) a = a + "Jít, ";
+                if (mluvit) a = a + "Mluvit";
                 moznosti = a;
                 return a;
             }
@@ -186,6 +193,10 @@ namespace Game_Book_Try
                     if (a.Contains("Jít"))
                     {
                         Jit();
+                    }
+                    if (a.Contains("Mluvit"))
+                    {
+                        NPC_Select(k_npc, k_npc_ptase);
                     }
                     While_Odpovedi = false;
                 }
@@ -322,6 +333,7 @@ namespace Game_Book_Try
 
             Console.WriteLine("Vidíš: " + k_rozhlednuti);
             if (k_najduti != "") seber = true;
+            if (k_npc != "") mluvit = true;
             rozhledni_se = false;
             Console.WriteLine(Moznosti());
             Console.Write("Odpověď: ");
@@ -503,16 +515,69 @@ namespace Game_Book_Try
             }
         }
 
-        static void Rozhovor()
+        static void Rozhovor(string nickname, string pta_se)
         {
+            while (rozhovor)
+            {
+                Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+                Console.Write(new string(' ', Console.WindowWidth));
+                Console.Write(new string(' ', Console.WindowWidth));
+                Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+
+                Console.WriteLine("(" + nickname + ") " + pta_se + ": " + k_rozhovoru);
+                Console.Write("Odpověď: ");
+                string r = Console.ReadLine();
+                if (r.Contains("Zbohem"))
+                {
+                    Console.WriteLine("(" + nickname + "): Zbohem");
+                    rozhovor = false;
+                    Console.ReadKey();
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+                    Console.Write(new string(' ', Console.WindowWidth));
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+                }
+                if (r == "")
+                {
+                    Console.WriteLine("(" + nickname + "): Cože?");
+                    Console.ReadKey();
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+                    Console.Write(new string(' ', Console.WindowWidth));
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+                }
+                Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+                Console.Write(new string(' ', Console.WindowWidth));
+                Console.Write(new string(' ', Console.WindowWidth));
+                Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+            }
+            Console.Write("Odpověď: ");
+            Odpoved(Console.ReadLine());
+        }
+        
+        static void NPC_Select(string nickname,string pta_se)
+        {
+            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+            
+            Console.WriteLine("S kým ? : " + nickname);
+            Console.Write("Odpověď: ");
+            string ro = Console.ReadLine();
+            string[] sp = {","};
+            string[] sav = nickname.Split(sp, StringSplitOptions.RemoveEmptyEntries);
+            int id = 0;
+            foreach(string s in sav){
+                if (s.Contains(ro))
+                {
+                    string[] spl = pta_se.Split(sp, StringSplitOptions.RemoveEmptyEntries);
+                    rozhovor = true;
+                    Rozhovor(s, spl[id]);
+                }
+                id++;
+            }
             Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
-            Console.WriteLine("Vidíš: " + k_rozhlednuti);
-            if (k_najduti != "") seber = true;
-            rozhledni_se = false;
-            Console.WriteLine(Moznosti());
             Console.Write("Odpověď: ");
             Odpoved(Console.ReadLine());
         }
