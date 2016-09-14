@@ -30,7 +30,7 @@ namespace Game_Book_Try
         static string k_pokracovani;
         static string k_rozhlednuti;
         static string k_rozhovoru;
-        static string k_npc;
+        static string k_npc; //npc Name
         static string k_npc_ptase;
 
         /*PAMĚŤ: POVOLOVÁNÍ/ZAKAZOVÁNÍ MOŽNOSTÍ*/
