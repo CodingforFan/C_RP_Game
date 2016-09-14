@@ -31,6 +31,7 @@ namespace Game_Book_Try
         static string k_rozhlednuti;
         static string k_rozhovoru;
         static string k_npc;
+        static string k_hhhh;
 
         /*PAMĚŤ: POVOLOVÁNÍ/ZAKAZOVÁNÍ MOŽNOSTÍ*/
         /*CIVILNÍ*/
