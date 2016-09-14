@@ -60,7 +60,7 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
-                Mistnost(mistnost, varianta);
+               Mistnost(mistnost, varianta);
             }
         }
 
