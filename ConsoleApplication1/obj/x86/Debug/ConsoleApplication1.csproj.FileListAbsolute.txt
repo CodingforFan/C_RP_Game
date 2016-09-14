@@ -5,3 +5,5 @@ C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\ConsoleAppl
 C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Haitem\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
 C:\Users\Haitem\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
