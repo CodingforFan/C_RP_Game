@@ -65,7 +65,8 @@ namespace Game_Book_Try
 
             while (While_MainTree)
             {
-                //Souboj();
+               Mistnost(mistnost, varianta);
+               //Souboj();
                Mistnost(mistnost, varianta);
             }
         }
@@ -101,7 +102,7 @@ namespace Game_Book_Try
 
                     /*Nastavení Místnosti*/
                     k_pokracovani = "Doleva, Doprava";
-                    k_rozhlednuti = "Starojtarou mírně zarostlou stesku Doleva, Druhou směřující doprava." + Environment.NewLine + "U ůpatí cesty ležící Kámen";
+                    k_rozhlednuti = "Starou mírně zarostlou stezku Doleva, Druhou směřující doprava." + Environment.NewLine + "U ůpatí cesty ležící Kámen";
                     k_prohledani = "";
                     k_najduti = "Kamen";
                     k_npc = ",Vandrák,";
