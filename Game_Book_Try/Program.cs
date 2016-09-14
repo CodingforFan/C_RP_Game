@@ -330,7 +330,6 @@ namespace Game_Book_Try
             Console.WriteLine(Moznosti());
             Console.Write("Odpověď: ");
             Odpoved(Console.ReadLine());
-
         }
 
         static void Souboj()
@@ -523,7 +522,6 @@ namespace Game_Book_Try
 
         static string Stats()
         {
-
             string a = "║ " + "[" + Jmeno + "]" + " Životy: " + Heal + " Mana: " + Mana + " Lvl. " + Lvl;
             string b = "║ Životy nepřítele: " + zivoty_nepritele;
             int delka = 0;
@@ -563,7 +561,17 @@ namespace Game_Book_Try
         //{
 
         //}
-    
+
+        static void delete(int a)
+        {
+            Console.SetCursorPosition(0, Console.CursorTop - a);
+            for (int i = 0; i < a; i++)
+            {
+                Console.WriteLine(new string(' ', Console.WindowWidth));
+            }
+            if ((Console.CursorTop - a) <= 0) { a = a - 1; }
+            Console.SetCursorPosition(0, Console.CursorTop - a - 1);
+        }
     
     }
 }
