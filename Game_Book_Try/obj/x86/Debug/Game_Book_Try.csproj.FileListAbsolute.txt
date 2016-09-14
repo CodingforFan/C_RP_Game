@@ -7,8 +7,16 @@ C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\Game_Book_T
 C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\Game_Book_Try\bin\Debug\Game_Book_Try.exe
 C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\Game_Book_Try\bin\Debug\Game_Book_Try.pdb
 C:\Users\asus\Desktop\Ostatní\Projekty\VisualStudioC#\Game_Book_Try\Game_Book_Try\obj\x86\Debug\Game_Book_Try.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.exe
 C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.pdb
 C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Debug\Game_Book_Try.exe
 C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Debug\Game_Book_Try.pdb
 C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Haitem\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.exe
+C:\Users\Haitem\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.pdb
+C:\Users\Haitem\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Debug\Game_Book_Try.exe
+C:\Users\Haitem\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Debug\Game_Book_Try.pdb
+C:\Users\Haitem\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Debug\Game_Book_Try.csprojResolveAssemblyReference.cache
+>>>>>>> refs/remotes/origin/Rozhovor
