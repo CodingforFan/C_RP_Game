@@ -1,0 +1,4 @@
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.exe
+C:\Users\asus\Documents\GitHub\C_RP_Game\ConsoleApplication1\obj\x86\Release\ConsoleApplication1.pdb

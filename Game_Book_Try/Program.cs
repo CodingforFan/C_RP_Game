@@ -595,8 +595,8 @@ namespace Game_Book_Try
 
         static string Stats()
         {
-            string a = "║ " + "[" + Jmeno + "]" + " Životy: " + Heal + " Mana: " + Mana + " Lvl. " + Lvl;
-            string b = "║ Životy nepřítele: " + zivoty_nepritele;
+            string a = "║ " + "[" + Jmeno + "] " + Class + " Životy: " + Heal + " Mana: " + Mana + " Lvl." + Lvl;
+            string b = "║ " + "[" + v_boji_s + "] " + "Životy: " + zivoty_nepritele;
             int delka = 0;
             if (a.Length > b.Length) delka = a.Length;
             else if (a.Length < b.Length) delka = b.Length;

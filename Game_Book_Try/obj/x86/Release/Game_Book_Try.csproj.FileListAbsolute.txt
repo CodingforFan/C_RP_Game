@@ -1,0 +1,4 @@
+C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Release\Game_Book_Try.exe
+C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\bin\Release\Game_Book_Try.pdb
+C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Release\Game_Book_Try.exe
+C:\Users\asus\Documents\GitHub\C_RP_Game\Game_Book_Try\obj\x86\Release\Game_Book_Try.pdb
