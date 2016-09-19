@@ -94,6 +94,23 @@ namespace Game_Book_Try
 
         static void Mistnost(int id, int vari = 0)
         {
+            ///*Nastavení Místnosti*/
+            //k_pokracovani = "";
+            //k_rozhlednuti = "";
+            //k_prohledani = "";
+            //k_najduti = "";
+            //prohledej = false;
+            //rozhledni_se = false;
+            //seber = false;
+            //jit = false;
+            //radky_v_hl_popise = 0;
+            ///*Konec nastavení místnosti)*/
+
+            //Souboj();
+            //Console.WriteLine("Popis Lokace: ");
+            //Console.WriteLine(Moznosti());
+
+
             Console.Clear();
             if (id == 0)
             {
@@ -144,7 +161,23 @@ namespace Game_Book_Try
             }
             else if (id == 2)
             {
-                if (vari == 0) { }
+                if (vari == 0) 
+                {
+                    /*Nastavení Místnosti*/
+                    k_pokracovani = "Dopredu, Zpátky";
+                    k_rozhlednuti = "Na cestě leží cosi blízkavého hned vedle zrezlé podkovy.";
+                    k_prohledani = "";
+                    k_najduti = "Zlatý Prsten, Podkova";
+                    prohledej = true;
+                    rozhledni_se = false;
+                    seber = false;
+                    jit = false;
+                    radky_v_hl_popise = 1;
+                    /*Konec nastavení místnosti)*/
+
+                    Console.WriteLine("Popis Lokace: Nacházíš se na hranicích hlubokého hvozdu, který na tebe úsobý strašidelným dojmem");
+                    Console.WriteLine(Moznosti());
+                }
             }
             else if (id == 3)
             {
@@ -305,6 +338,14 @@ namespace Game_Book_Try
                 if (mistnost == 0)
                 {
                     mistnost = 1;
+                    varianta = 0;
+                }
+            }
+            if (Operator == "Doprava")
+            {
+                if (mistnost == 0)
+                {
+                    mistnost = 2;
                     varianta = 0;
                 }
             }
