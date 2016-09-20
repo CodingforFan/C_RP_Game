@@ -130,7 +130,7 @@ namespace Game_Book_Try
                     seber = false;
                     mluvit = false;
                     jit = true;
-                    radky_v_hl_popise = 2;
+                    radky_v_hl_popise = 1;
                     /*Konec nastavení místnosti)*/
 
                     Console.WriteLine("Popis Lokace: Nacházíš se v překrásném ůdolí.");
@@ -187,9 +187,15 @@ namespace Game_Book_Try
             Odpoved(Console.ReadLine());
         }
 
-        static string Moznosti(bool V_Souboji = false)
+        static string Moznosti(bool V_Souboji = false, bool V_Rozhovoru = false)
         {
-            if (V_Souboji)
+            if (V_Rozhovoru)
+            {
+                string a = "Moznosti: " + k_rozhovoru;
+                moznosti = a;
+                return a;
+            }
+            else if (V_Souboji)
             {
                 string a = "Moznosti: ";
                 if (utok_1) a = a + "Lehký ůtok, ";
@@ -308,10 +314,7 @@ namespace Game_Book_Try
                 {
                     Console.WriteLine("Neplatná možnost! Stiskni {Enter}");
                     Console.ReadKey();
-                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
-                    Console.Write(new string(' ', Console.WindowWidth));
-                    Console.Write(new string(' ', Console.WindowWidth));
-                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+                    delete(1);
                     Console.Write("Odpověď: ");
                     Odpoved(Console.ReadLine());
                 }
@@ -353,17 +356,13 @@ namespace Game_Book_Try
 
         static void Sebrat()
         {
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
-            Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+            delete(1);
             Console.WriteLine("Co ? : " + k_najduti);
             Console.Write("Odpověď: ");
             string a = Console.ReadLine();
             if (k_najduti.Contains(a)) inventar.Add(a);
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
-            Console.Write(new string(' ', Console.WindowWidth));
-            Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 2);
+            k_najduti.Replace(a, string.Empty);
+            delete(2);
             Console.Write("Odpověď: ");
             Odpoved(Console.ReadLine());
 
@@ -371,13 +370,7 @@ namespace Game_Book_Try
 
         static void Rozhlednuti()
         {
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - (1 + radky_v_hl_popise));
-            for (int i = 0; i < (1 + radky_v_hl_popise);i++ )
-            {
-                Console.Write(new string(' ', Console.WindowWidth));
-            }
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - (1 + radky_v_hl_popise));
-
+            delete(radky_v_hl_popise);
 
             Console.WriteLine("Vidíš: " + k_rozhlednuti);
             if (k_najduti != "") seber = true;
